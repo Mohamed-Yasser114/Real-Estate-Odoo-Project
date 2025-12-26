@@ -1,0 +1,46 @@
+<odoo>
+    <record id="building_view" model="ir.ui.view">
+        <field name="name">building.view.form</field>
+        <field name="model">building</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="no"/>
+                        <field name="code"/>
+                        <field name="description"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="building_list_view" model="ir.ui.view">
+        <field name="name">building.view.list</field>
+        <field name="model">building</field>
+        <field name="arch" type="xml">
+            <list class="header_custom">
+                <field name="no"/>
+                <field name="code"/>
+                <field name="description"/>
+            </list>
+        </field>
+    </record>
+    <record id="building_view_search" model="ir.ui.view">
+        <field name="name">building.view.search</field>
+        <field name="model">building</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="no"/>
+                <field name="code"/>
+            </search>
+        </field>
+    </record>
+    <record id="building_action" model="ir.actions.act_window">
+        <field name="name">Building</field>
+        <field name="res_model">building</field>
+    </record>
+
+
+    <menuitem id="building_menu_item" name="Building List" parent="properties_menu" action="building_action"/>
+</odoo>
